@@ -20,9 +20,25 @@ namespace AnimatedGifRecorder
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<int> _startCoordinates;
+        private List<int> _endCoordinates;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            this.PreviewKeyDown += new KeyEventHandler(HandlEsc);
+        }
+
+        private void HandlEsc(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape) Close();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine(sender);
+            Console.WriteLine(e.GetPosition(null));
         }
     }
 }

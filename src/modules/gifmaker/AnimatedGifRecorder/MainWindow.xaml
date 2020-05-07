@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimatedGifRecorder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="AnimatedGifRecorder" 
+        AllowsTransparency="True" 
+        WindowStyle="None"
+        WindowState="Maximized" 
+        Background="{x:Null}">
+    <Grid MouseDown="Grid_MouseDown">
+        <!-- Mask to select recording area, modified from https://stackoverflow.com/questions/21317610/opacity-masks-in-wpf-excluding-shapes -->
+        <!-- Will be mobed to RecordRegionOverlay once the MainViewModel is set-up -->
+        <Path Fill="Black" Opacity="0.5">
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Exclude">
+                    <CombinedGeometry.Geometry1>
+                        <RectangleGeometry Rect="0,0,10000,10000"/>
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <RectangleGeometry Rect="0,0,800,600"/>
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
     </Grid>
 </Window>
