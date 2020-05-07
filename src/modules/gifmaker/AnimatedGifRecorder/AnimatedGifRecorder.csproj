@@ -37,6 +37,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Drawing.Common.4.7.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,6 +63,23 @@
     </ApplicationDefinition>
     <Compile Include="MVVMHelpers\PropertyChangedBase.cs" />
     <Compile Include="MVVMHelpers\RelayCommand.cs" />
+    <Compile Include="ScreenToGif\Model\FrameInfo.cs" />
+    <Compile Include="ScreenToGif\Model\ProjectInfo.cs" />
+    <Compile Include="ScreenToGif\Model\UpdateAvailable.cs" />
+    <Compile Include="ScreenToGif\Util\Capture\BaseCapture.cs" />
+    <Compile Include="ScreenToGif\Util\Glass.cs" />
+    <Compile Include="ScreenToGif\Util\Capture\ICapture.cs" />
+    <Compile Include="ScreenToGif\Util\Capture\ImageCapture.cs" />
+    <Compile Include="ScreenToGif\Util\Constants.cs" />
+    <Compile Include="ScreenToGif\Util\Enums.cs" />
+    <Compile Include="ScreenToGif\Util\Framerate.cs" />
+    <Compile Include="ScreenToGif\Util\Global.cs" />
+    <Compile Include="ScreenToGif\Util\LogWriter.cs" />
+    <Compile Include="ScreenToGif\Util\MutexList.cs" />
+    <Compile Include="ScreenToGif\Util\Native.cs" />
+    <Compile Include="ScreenToGif\Util\Other.cs" />
+    <Compile Include="ScreenToGif\Util\SimpleKeyGesture.cs" />
+    <Compile Include="ScreenToGif\Util\UserSettings.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\RecordRegionOverlay.xaml.cs">
       <DependentUpon>RecordRegionOverlay.xaml</DependentUpon>
@@ -103,6 +126,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
